@@ -5,7 +5,7 @@ export default tempratureStyle = StyleSheet.create({
 
     },
     value: {
-        fontSize: 70,
+        fontSize: 56,
         fontWeight: 'bold',
         color: '#fff'
     }
