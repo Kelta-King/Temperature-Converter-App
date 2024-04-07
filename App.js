@@ -1,20 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, ImageBackground } from 'react-native';
+import { appStyle } from './App.style';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import WorkSpace from "./Components/WorkSpace";
+import hotBackground from "./assets/hot.png";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <ImageBackground source={hotBackground} style={appStyle.backgroundImage}>
+            <SafeAreaProvider>
+                <SafeAreaView style={appStyle.root}>
+                    <WorkSpace />
+                </SafeAreaView>
+            </SafeAreaProvider>
+        </ImageBackground>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
