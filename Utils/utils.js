@@ -27,4 +27,16 @@ function getOppositeUnit(unit) {
     }
 }
 
-export { UNITS, getOppositeUnit, convertTemperature }
+function isColdTemp(temprature, unit) {
+    if (unit === UNITS.CELSIUS) {
+        return (temprature <= 0);
+    }
+    else if (unit === UNITS.FAHRENHEIT) {
+        return (temprature <= 32);
+    }
+    else {
+        throw new Error('Invalid unit');
+    }
+}
+
+export { UNITS, getOppositeUnit, convertTemperature, isColdTemp }
